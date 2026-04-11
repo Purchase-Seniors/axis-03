@@ -311,7 +311,7 @@ $(function() {
     return this.each(function() { 
       if(to == undefined || to == settings.endNumber)
         to = settings.startNumber; 
-      } 
+    
       var element = jQuery(this);
       element.children('.secs').text(to); 
       element.animate({}, settings.duration, "", function() { 
