@@ -312,16 +312,17 @@ $(function() {
       if(!to && to != settings.endNumber) { 
         to = settings.startNumber; 
       } 
-      jQuery(this).children('.secs').text(to); 
-      jQuery(this).animate({}, settings.duration, "", function() { 
+      var element = jQuery(this);
+      element.children('.secs').text(to); 
+      element.animate({}, settings.duration, "", function() { 
         if(to > settings.endNumber + 1) { 
-          jQuery(this).children('.secs').text(to - 1); 
-          jQuery(this).countDown(settings, to - 1); 
+          element.children('.secs').text(to - 1); 
+          element.countDown(settings, to - 1); 
           var minutes = Math.floor(to / 60); 
           var seconds = to - minutes * 60; 
-          jQuery(this).children('.cntr').text(pad(minutes.toString(),2) + ':' + pad(seconds.toString(),2)); 
+          element.children('.cntr').text(pad(minutes.toString(),2) + ':' + pad(seconds.toString(),2)); 
         } else { 
-          settings.callBack(this); 
+          settings.callBack(element); 
         } 
       }); 
     }); 
