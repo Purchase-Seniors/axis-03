@@ -309,7 +309,7 @@ $(function() {
       callBack: function() { } 
     }, settings); 
     return this.each(function() { 
-      if(!to && to != settings.endNumber) { 
+      if(!to || to == settings.startNumber) { 
         to = settings.startNumber; 
       } 
       var element = jQuery(this);
